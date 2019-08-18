@@ -1,0 +1,25 @@
+{% load static%}
+<html>
+<title>Log IN</title>
+
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<div class="header">
+  <script>M.toast({html: "{{message}}", classes: 'green rounded', displayLength:2000});</script>
+</div>
+	{% include "includes/navbar.html" %}
+
+	{% include "includes/messages.html" %}
+
+	<div class="set">
+		{% block content %}{% endblock %}
+	</div>
+	<div class="footer">
+		<p align="center">Created by Piyush0074</p>
+	</div>
+
+</body>
+</html>

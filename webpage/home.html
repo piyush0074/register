@@ -1,0 +1,22 @@
+{% extends "template.html"%}
+
+{% load static%}
+
+	<div class="set">
+		{% block content %}{% for tut in tutorials %}
+	<p>{{tut.tutorial_title}}</p>
+	<p>{{tut.tutorial_published}}</p>
+	
+    
+	    <br><br>
+
+	<p>{{tut.tutorial_title}}</p>
+
+		<br><br>
+	<p>{{tut.tutorial_title}}</p>
+	
+    
+    <br><br>
+{% endfor %}{% endblock %}
+
+	
