@@ -14,23 +14,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path,include
+#from django.conf.urls import patterns, include, url
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
-from two_factor.urls import urlpatterns as tf_urls
+
+
+from django.contrib.auth.views import LoginView
+from django_otp.forms import OTPAuthenticationForm
 
 
 
-app_name='main'
+#app_name='main'
 
 urlpatterns = [
 	path("register/",views.register, name="register here"),
-	path("",views.home,name="main page"),
-	path("home/",views.home,name="main page"),
+	path("",views.home,name="home"),
+	path("accounts/profile/",views.home),
+	path("home/",views.home,name="home"),
+	path('security/', include('django_mfa.urls')),
+	path('setting/',views.setting,name='setting'),
 
-	path("tinymce/", include("tinymce.urls")),
+	path('tinymce/', include(('tinymce.urls','tinymce'),namespace='tinymce')),
 	path("login/",views.login,name="main page"),
-	path(r'', include(tf_urls)),
 	
 	path("logout/",views.logout_user,name="log out"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

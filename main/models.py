@@ -1,6 +1,9 @@
 from django.db import models
 from datetime import datetime
 from django.utils import timezone
+
+from django.contrib.auth.models import AbstractUser
+
 # Create your models here.
 
 class Tutorial(models.Model):

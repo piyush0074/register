@@ -39,10 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 	'tinymce',
 	'main.apps.MainConfig',
-	'django_otp.plugins.otp_static',
-	'django_otp.plugins.otp_totp',
-	'two_factor',
+
+	'django_mfa',
+	'django_otp',
+    'django_otp.plugins.otp_totp',
+    'django_otp.plugins.otp_static',
+
+
+#'users.apps.UsersConfig',
 ]
+#AUTH_USER_MODEL = 'users.CustomUser' # new
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
     'width': 1120,
@@ -71,13 +77,16 @@ TINYMCE_DEFAULT_CONFIG = {
     'menubar': True,
     'statusbar': True,
     }
-MIDDLEWARE = [
+
+MIDDLEWARE= [
     'django.middleware.security.SecurityMiddleware',
+	'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-	'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django_otp.middleware.OTPMiddleware',
+	'django_mfa.middleware.MfaMiddleware',
+    
+    #'django_otp.middleware.OTPMiddleware',   
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -156,4 +165,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR,'static'),
 ]
-LOGIN_URL = 'two_factor:login'
+#LOGIN_URL = 'two_factor:login'
