@@ -21,7 +21,7 @@ from django.conf import settings
 
 
 from django.contrib.auth.views import LoginView
-from django_otp.forms import OTPAuthenticationForm
+
 
 
 
@@ -35,7 +35,7 @@ urlpatterns = [
 	path('security/', include('django_mfa.urls')),
 	path('setting/',views.setting,name='setting'),
 
-	path('tinymce/', include(('tinymce.urls','tinymce'),namespace='tinymce')),
+	path('tinymce/', include('tinymce.urls')),
 	path("login/",views.login,name="main page"),
 	
 	path("logout/",views.logout_user,name="log out"),

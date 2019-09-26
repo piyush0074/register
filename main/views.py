@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Tutorial
-from django.http.response import HttpResponseRedirect, JsonResponse
+from django.http.response import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as save_login

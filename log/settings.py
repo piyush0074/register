@@ -41,14 +41,7 @@ INSTALLED_APPS = [
 	'main.apps.MainConfig',
 
 	'django_mfa',
-	'django_otp',
-    'django_otp.plugins.otp_totp',
-    'django_otp.plugins.otp_static',
-
-
-#'users.apps.UsersConfig',
 ]
-#AUTH_USER_MODEL = 'users.CustomUser' # new
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
     'width': 1120,
@@ -85,8 +78,7 @@ MIDDLEWARE= [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django_mfa.middleware.MfaMiddleware',
-    
-    #'django_otp.middleware.OTPMiddleware',   
+      
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
