@@ -9,7 +9,7 @@ services:
    volumes: 
       - ./log:/log
    command: >
-       #sh -c "virtualenv env"
+       # sh -c "virtualenv env"
 
       # > sh -c "source /env/bin/activate"
 
