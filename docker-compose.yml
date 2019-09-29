@@ -9,8 +9,4 @@ services:
    volumes: 
       - ./log:/log
    command: >
-       # sh -c "virtualenv env"
-
-      # > sh -c "source /env/bin/activate"
-
-         sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py runserver 0.0.0.0:8000"
