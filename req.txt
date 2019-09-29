@@ -1,3 +1,0 @@
-tinymce4
-django_mfa
-docker
