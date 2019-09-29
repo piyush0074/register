@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<br>
+
+<form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+	<button class="btn" type="submit">Log In</button>
+    </form>
+
+    <a href="login.html" target="blank"><strong>Forgot Password</strong></a>
+{% endblock %}
+
